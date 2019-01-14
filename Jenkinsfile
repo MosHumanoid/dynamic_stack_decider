@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'ros:melodic-ros-core' }
+        docker { args '-u 0 -g 0' image 'ros:melodic-ros-core' }
     }
 
     stages {
@@ -9,9 +9,7 @@ pipeline {
                 stage('Prepare Workspace') {
                     steps {
                         sh '''
-                            echo \$EUID
-
-                            sudo rosdep update
+                            rosdep update
 
                             mkdir -p catkin_ws/src
                             cd catkin_ws
