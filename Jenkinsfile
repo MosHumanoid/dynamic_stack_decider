@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'ubuntu:bionic' }
+        docker { image 'ros:melodic-ros-core' }
     }
 
     stages {
