@@ -3,13 +3,16 @@ pipeline {
         docker { image 'ros:melodic-ros-core' }
     }
 
+    environment {
+        HOME = $WORKSPACE
+    }
+
     stages {
         stage('Build') {
             stages {
                 stage('Prepare Workspace') {
                     steps {
                         sh '''
-                            echo \$HOME
 
                             rosdep update
 
