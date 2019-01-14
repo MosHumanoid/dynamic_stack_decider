@@ -4,7 +4,7 @@ pipeline {
     }
 
     environment {
-        HOME = $WORKSPACE
+        HOME = '$WORKSPACE'
     }
 
     stages {
