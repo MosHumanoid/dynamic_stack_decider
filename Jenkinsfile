@@ -9,7 +9,9 @@ pipeline {
                 stage('Prepare Workspace') {
                     steps {
                         sh '''
-                            rosdep update
+                            echo $EUID
+
+                            sudo rosdep update
 
                             mkdir -p catkin_ws/src
                             cd catkin_ws
