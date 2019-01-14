@@ -13,10 +13,9 @@ pipeline {
                 stage('Prepare Workspace') {
                     steps {
                         sh '''
-                            export HOME=$HOME
-                            echo $HOME
-
                             rosdep update
+
+                            ls -a
 
                             apt update
                             apt install -y python-catkin-tools
