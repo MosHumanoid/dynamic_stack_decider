@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { args '-u 0 -g 0' image 'ros:melodic-ros-core' }
+        docker {
+            args '-u 0:0'
+            image 'ros:melodic-ros-core'
+        }
     }
 
     stages {
