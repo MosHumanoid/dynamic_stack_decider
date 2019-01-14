@@ -9,6 +9,8 @@ pipeline {
                 stage('Prepare Workspace') {
                     steps {
                         sh '''
+                            echo \$HOME
+
                             rosdep update
 
                             apt update
