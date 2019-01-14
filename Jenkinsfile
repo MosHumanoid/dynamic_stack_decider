@@ -14,6 +14,8 @@ pipeline {
                         sh '''
                             rosdep update
 
+                            apt install -y python-catkin-tools
+
                             mkdir -p catkin_ws/src
                             cd catkin_ws
                             catkin init
