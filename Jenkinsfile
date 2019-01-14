@@ -9,10 +9,7 @@ pipeline {
                 stage('Prepare Workspace') {
                     steps {
                         sh '''
-                            ls
-                            pwd
-
-                            rosdep init
+                            rosdep update
 
                             mkdir -p catkin_ws/src
                             cd catkin_ws
