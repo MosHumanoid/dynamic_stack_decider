@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build') {
             stage('Prepare workspace') {
-                sh "
+                sh '''
                     ls
                     pwd
 
@@ -19,7 +19,7 @@ pipeline {
 
                     ls
 
-                "
+                '''
             }
 
             stage('Build package') {
