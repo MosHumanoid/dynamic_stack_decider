@@ -7,7 +7,8 @@ pipeline {
 
         stage('Build') {
             stage('Prepare workspace') {
-                sh '''
+                steps {
+                    sh '''
                     ls
                     pwd
 
@@ -20,10 +21,13 @@ pipeline {
                     ls
 
                 '''
+                }
             }
 
             stage('Build package') {
-
+                steps {
+                    sh "echo hi"
+                }
             }
 
         }
