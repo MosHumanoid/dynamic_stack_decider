@@ -5,8 +5,12 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                sh 'echo Hi'
+            stages {
+                stage('Nested Build') {
+                    steps {
+                        sh 'Hi'
+                    }
+                }
             }
         }
 
