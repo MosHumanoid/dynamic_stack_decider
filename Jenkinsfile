@@ -14,6 +14,7 @@ pipeline {
                         sh '''
                             rosdep update
 
+                            apt update
                             apt install -y python-catkin-tools
 
                             mkdir -p catkin_ws/src
