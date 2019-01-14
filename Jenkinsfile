@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            args '-u 0:0'
+            args '-u 0'
             image 'ros:melodic-ros-core'
         }
     }
