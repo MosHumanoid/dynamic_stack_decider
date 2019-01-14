@@ -6,9 +6,15 @@ pipeline {
     stages {
         stage('Build') {
             stages {
-                stage('Nested Build') {
+                stage('Prepare Workspace') {
                     steps {
                         sh 'Hi'
+                    }
+                }
+
+                stage('Build package') {
+                    steps {
+                        sh 'Hello'
                     }
                 }
             }
