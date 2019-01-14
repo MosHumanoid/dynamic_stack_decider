@@ -27,7 +27,9 @@ pipeline {
 
                 stage('Build package') {
                     steps {
-                        sh 'echo Hello'
+                        sh '''
+                            rosdep check dynamic_stack_decider
+                        '''
                     }
                 }
             }
