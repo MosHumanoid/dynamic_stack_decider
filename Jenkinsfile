@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'ubuntu/bionic' }
+        docker { image 'ubuntu:bionic' }
     }
 
     stages {
