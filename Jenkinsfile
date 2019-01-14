@@ -9,7 +9,7 @@ pipeline {
                 stage('Prepare Workspace') {
                     steps {
                         sh '''
-                            echo $EUID
+                            echo \$EUID
 
                             sudo rosdep update
 
