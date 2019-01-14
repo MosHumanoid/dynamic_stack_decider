@@ -8,13 +8,22 @@ pipeline {
             stages {
                 stage('Prepare Workspace') {
                     steps {
-                        sh 'Hi'
+                        sh '''
+                            ls
+                            pwd
+
+                            rosdep init
+
+                            mkdir -p catkin_ws/src
+                            cd catkin_ws
+                            catkin init
+                        '''
                     }
                 }
 
                 stage('Build package') {
                     steps {
-                        sh 'Hello'
+                        sh 'echo Hello'
                     }
                 }
             }
