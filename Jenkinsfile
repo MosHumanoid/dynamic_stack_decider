@@ -18,7 +18,8 @@ pipeline {
                             apt install -y python-catkin-tools
 
                             mkdir -p catkin_ws/src
-                            cd catkin_ws
+                            ln -s `realpath dynamic_stack_decider` catkin_ws/src/
+                            ln -s `realpath dynamic_stack_decider_visualisation` catkin_ws/src/
                             catkin init
                         '''
                     }
