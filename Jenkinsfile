@@ -13,7 +13,8 @@ pipeline {
                 stage('Prepare Workspace') {
                     steps {
                         sh '''
-                            echo \$HOME
+                            export HOME=$HOME
+                            echo $HOME
 
                             rosdep update
 
