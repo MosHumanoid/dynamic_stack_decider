@@ -4,6 +4,11 @@ pipeline {
     }
 
     stages {
+        stage('Build') {
+            steps {
+                sh 'echo Hi'
+            }
+        }
 
         stage('Test') {
             steps {
