@@ -4,8 +4,8 @@ pipeline {
     }
 
     stages {
-
         stage('Build') {
+            stages {
             stage('Prepare workspace') {
                 steps {
                     sh '''
@@ -36,6 +36,7 @@ pipeline {
             steps {
                 sh 'echo Hallo Timon'
             }
+        }
         }
     }
 }
