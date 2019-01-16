@@ -26,11 +26,12 @@ pipeline {
                 stage('Build package') {
                     steps {
                         sh '''#!/bin/bash
-                            source /catkin_ws/devel/setup.bash
                             source /opt/ros/melodic/setup.bash
 
                             cd /catkin_ws
                             catkin build
+
+                            source /catkin_ws/devel/setup.bash
                         '''
                     }
                 }
@@ -40,8 +41,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''#!/bin/bash
-                    source /catkin_ws/devel/setup.bash
-                    source /opt/ros/melodic/setup.bash
+                    env
 
                     roscd dynamic_stack_decider
                     python3 tests/test_parser.py
