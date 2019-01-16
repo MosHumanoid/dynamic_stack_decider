@@ -44,6 +44,7 @@ pipeline {
 
                     coverage run tests/test_parser.py
                     coverage html -d $HOME
+                    ls $HOME
                 '''
             }
         }
