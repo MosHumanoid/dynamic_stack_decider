@@ -29,12 +29,9 @@ pipeline {
                 stage('Build package') {
                     steps {
                         sh '''
-                            # cd catkin_ws
+                            cd catkin_ws
                             catkin list
-                            ls
-                            pwd
-                            ls src
-                            ls src/dynamic_stack_decider
+
                             rosdep check dynamic_stack_decider
                         '''
                     }
