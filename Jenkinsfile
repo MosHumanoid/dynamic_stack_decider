@@ -13,9 +13,7 @@ pipeline {
                 stage('Prepare Workspace') {
                     steps {
                         sh '''
-                            ls -a
-
-                            mkdir -p catkin_ws/{src, logs, build, devel}
+                            mkdir -p catkin_ws/src catkin_ws/logs catkin_ws/build catkin_ws/devel
                             ln -s `realpath dynamic_stack_decider` catkin_ws/src/
                             ln -s `realpath dynamic_stack_decider_visualization` catkin_ws/src/
                             catkin init -w catkin_ws
