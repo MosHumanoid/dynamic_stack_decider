@@ -4,7 +4,7 @@ pipeline {
     }
 
     environment {
-        HOME = '$WORKSPACE'
+        HOME = "$WORKSPACE"
     }
 
     stages {
@@ -40,9 +40,10 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                     source /catkin_ws/devel/setup.bash
-
                     roscd dynamic_stack_decider
-                    python3 tests/test_parser.py
+
+                    coverage run tests/test_parser.py
+                    coverage html -d $HOME
                 '''
             }
         }
