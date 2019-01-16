@@ -30,6 +30,8 @@ pipeline {
                     steps {
                         sh '''
                             catkin list
+                            ls src
+                            ls src/dynamic_stack_decider
                             rosdep check dynamic_stack_decider
                         '''
                     }
