@@ -20,7 +20,7 @@ pipeline {
                             cd catkin_ws
 
                             # source catkin_ws/devel/setup.bash
-                            catkin ls
+                            catkin list
                             rosdep update
                         '''
                     }
