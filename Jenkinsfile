@@ -15,12 +15,13 @@ pipeline {
                         sh '''
                             ls -a
 
-                            mkdir -p catkin_ws/src
+                            mkdir -p catkin_ws/{src, logs, build, devel}
                             ln -s `realpath dynamic_stack_decider` catkin_ws/src/
                             ln -s `realpath dynamic_stack_decider_visualization` catkin_ws/src/
                             catkin init -w catkin_ws
 
                             source catkin_ws/devel/setup.bash
+                            rosdep update
                         '''
                     }
                 }
