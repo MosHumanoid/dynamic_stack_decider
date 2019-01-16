@@ -10,18 +10,17 @@ pipeline {
     stages {
         stage('Build') {
             stages {
-                stage('Prepare Workspace') {
+                stage('Prepare Catkin Workspace') {
                     steps {
                         sh '''
-                            mkdir -p catkin_ws/src catkin_ws/logs catkin_ws/build catkin_ws/devel
-                            ln -s `realpath dynamic_stack_decider` catkin_ws/src/
-                            ln -s `realpath dynamic_stack_decider_visualization` catkin_ws/src/
-                            catkin init -w catkin_ws
-                            cd catkin_ws
+                            . /catkin_ws/devel/setup.sh
 
-                            # source catkin_ws/devel/setup.bash
-                            catkin list
+                            ln -s `realpath dynamic_stack_decider` /catkin_ws/src/
+                            ln -s `realpath dynamic_stack_decider_visualization` /catkin_ws/src/
+                            cd /catkin_ws
+
                             rosdep update
+                            rosdep install -a
                         '''
                     }
                 }
@@ -32,8 +31,6 @@ pipeline {
                             cd catkin_ws
                             catkin list
 
-                            rosdep check -a
-                            rosdep install -a
                         '''
                     }
                 }
