@@ -27,6 +27,8 @@ pipeline {
                     steps {
                         sh '''#!/bin/bash
                             source /catkin_ws/devel/setup.bash
+                            source /opt/ros/melodic/setup.bash
+                            cat /ros_entrypoint.sh
 
                             cd /catkin_ws
                             catkin build
