@@ -29,6 +29,7 @@ pipeline {
                 stage('Build package') {
                     steps {
                         sh '''
+                            catkin list
                             rosdep check dynamic_stack_decider
                         '''
                     }
