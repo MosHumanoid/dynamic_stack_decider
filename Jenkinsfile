@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'ros:melodic-ros-core' }
+        docker { image 'bitbots:base' }
     }
 
     environment {
@@ -16,9 +16,6 @@ pipeline {
                             rosdep update
 
                             ls -a
-
-                            apt update
-                            apt install -y python-catkin-tools
 
                             mkdir -p catkin_ws/src
                             ln -s `realpath dynamic_stack_decider` catkin_ws/src/
