@@ -30,8 +30,6 @@ pipeline {
 
                             cd /catkin_ws
                             catkin build
-
-                            source /catkin_ws/devel/setup.bash
                         '''
                     }
                 }
@@ -41,7 +39,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''#!/bin/bash
-                    env
+                    source /catkin_ws/devel/setup.bash
 
                     roscd dynamic_stack_decider
                     python3 tests/test_parser.py
