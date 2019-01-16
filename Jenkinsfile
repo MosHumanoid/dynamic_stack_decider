@@ -43,7 +43,8 @@ pipeline {
                     roscd dynamic_stack_decider
 
                     coverage run tests/test_parser.py
-                    coverage html -d $HOME/coverage/
+                    cp report.xml $HOME/report.xml
+                    coverage xml -d $HOME/coverage/
                 '''
             }
         }
@@ -60,6 +61,8 @@ pipeline {
                 reportFiles: 'index.html',
                 reportName: 'Coverage Report',
                 reportTitles: ''])
+
+            junit report.xml
         }
     }
 }
