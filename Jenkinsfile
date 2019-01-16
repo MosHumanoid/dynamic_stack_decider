@@ -20,7 +20,7 @@ pipeline {
                             cd /catkin_ws
 
                             rosdep update
-                            rosdep install -a
+                            rosdep install -ya
                         '''
                     }
                 }
