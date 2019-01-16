@@ -28,6 +28,8 @@ pipeline {
                 stage('Build package') {
                     steps {
                         sh '''
+                            env
+
                             cd /catkin_ws
                             catkin build
 
