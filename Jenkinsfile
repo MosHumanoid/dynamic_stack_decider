@@ -28,6 +28,7 @@ pipeline {
                 stage('Build package') {
                     steps {
                         sh '''#!/bin/bash
+                            source /catkin_ws/devel/setup.bash
                             env
 
                             cd /catkin_ws
