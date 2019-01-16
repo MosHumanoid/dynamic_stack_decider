@@ -52,13 +52,15 @@ pipeline {
     }
 
     post {
-        publishHTML([
-            allowMissing: false,
-            alwaysLinkToLastBuild: false,
-            keepAll: false,
-            reportDir: 'coverage',
-            reportFiles: 'index.html',
-            reportName: 'Coverage Report',
-            reportTitles: ''])
+        always {
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: false,
+                keepAll: false,
+                reportDir: 'coverage',
+                reportFiles: 'index.html',
+                reportName: 'Coverage Report',
+                reportTitles: ''])
+        }
     }
 }
