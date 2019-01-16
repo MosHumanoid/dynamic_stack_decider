@@ -32,7 +32,8 @@ pipeline {
                             cd catkin_ws
                             catkin list
 
-                            rosdep check dynamic_stack_decider
+                            rosdep check -a
+                            rosdep install -a
                         '''
                     }
                 }
