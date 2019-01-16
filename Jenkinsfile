@@ -28,11 +28,9 @@ pipeline {
                         sh '''#!/bin/bash
                             source /catkin_ws/devel/setup.bash
                             source /opt/ros/melodic/setup.bash
-                            cat /ros_entrypoint.sh
 
                             cd /catkin_ws
                             catkin build
-
                         '''
                     }
                 }
@@ -41,7 +39,13 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'echo Hallo Timon'
+                sh '''#!/bin/bash
+                    source /catkin_ws/devel/setup.bash
+                    source /opt/ros/melodic/setup.bash
+
+                    roscd dynamic_stack_decider
+                    python3 tests/test_parser.py
+                '''
             }
         }
 
