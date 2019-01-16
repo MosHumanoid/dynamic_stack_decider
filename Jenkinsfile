@@ -43,11 +43,22 @@ pipeline {
                     roscd dynamic_stack_decider
 
                     coverage run tests/test_parser.py
-                    coverage html -d $HOME
+                    coverage html -d $HOME/coverage/
                     ls $HOME
                 '''
             }
         }
 
+    }
+
+    post {
+        publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: false,
+            reportDir: 'coverage',
+            reportFiles: 'index.html',
+            reportName: 'Coverage Report',
+            reportTitles: ''])
     }
 }
