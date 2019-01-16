@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'bitbots:base' }
+        docker { image 'bitbots:builder' }
     }
 
     environment {
