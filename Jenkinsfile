@@ -45,7 +45,6 @@ pipeline {
                     coverage run tests/test_parser.py
                     cp report.xml $HOME/report.xml
                     coverage html -d $HOME/coverage/
-                    coverage xml -o $HOME/coverage.xml
                 '''
             }
         }
@@ -64,7 +63,6 @@ pipeline {
                 reportTitles: ''])
 
             junit report.xml
-            junit coverage.xml
         }
     }
 }
