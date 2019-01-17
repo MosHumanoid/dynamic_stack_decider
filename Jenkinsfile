@@ -62,7 +62,7 @@ pipeline {
                 reportName: 'Coverage Report',
                 reportTitles: ''])
 
-            junit report.xml
+            junit 'report.xml'
         }
     }
 }
