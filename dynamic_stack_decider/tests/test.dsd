@@ -8,6 +8,11 @@ $ThirdDecision
     FIRST --> @FirstAction
     SECOND --> @SecondAction
 
+#ParameterSubBehavior - param - param2
+$ThirdDecisiion
+    FIRST --> @FirstAction + key:-param
+    SECOND --> @SecondAction + key2:-param2
+
 -->TestDSD
 $FirstDecision
     ACTION --> @FirstAction
@@ -29,3 +34,4 @@ $FirstDecision
     MULTIPLE_PARAMETERS --> @FirstAction + key1:value1 + key2:value2
     SECOND_SUBBEHAVIOR_1 --> #SecondSubBehavior
     SECOND_SUBBEHAVIOR_2 --> #SecondSubBehavior
+    PARAMETER_SUBBEHAVIOR --> #ParameterSubBehavior + param:value + param2:value2

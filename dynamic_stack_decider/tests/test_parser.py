@@ -96,6 +96,15 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(sub_behavior_1_root_decision.activation_reason, 'SECOND_SUBBEHAVIOR_1')
         self.assertEqual(sub_behavior_2_root_decision.activation_reason, 'SECOND_SUBBEHAVIOR_2')
 
+    def test_subbehavior_parameter(self):
+        param_sub_behavior_root_decision = self.tree.root_element.get_child('PARAMETER_SUBBEHAVIOR')
+        first_action = param_sub_behavior_root_decision.get_child('FIRST')
+        self.assertEqual(first_action.name, 'FirstAction')
+        self.assertDictEqual(first_action.parameters, {'key': 'value'})
+        second_action = param_sub_behavior_root_decision.get_child('SECOND')
+        self.assertEqual(second_action.name, 'SecondAction')
+        self.assertDictEqual(second_action.parameters, {'key2': 'value2'})
+
 
 if __name__ == '__main__':
     with open('report.xml', 'wb') as output:
