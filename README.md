@@ -1,6 +1,6 @@
 # dynamic_stack_decider
 
-A leightweight framework for decision making and behavior defining for robots and other agents in chnaging enviroments. It combines the advantages of behavior trees, decision trees and state machines.
+A leightweight framework for decision making and behavior defining for robots and other agents in changing enviroments. It combines the advantages of behavior trees, decision trees and state machines.
 
 
 Programming:
